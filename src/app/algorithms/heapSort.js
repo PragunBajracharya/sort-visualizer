@@ -12,7 +12,7 @@ const heapify = (dataArr, start, dataArrSize) => {
 
     if (right < dataArrSize && dataArr[right] > dataArr[root]) {
         root = right;
-        orderedArr.push([root, null, null, null]);
+        orderedArr.push([null, root, null, null]);
     }
 
     if (root !== start) {
@@ -26,7 +26,7 @@ const heapSort = (dataArr) => {
     let tempDataArr = [...dataArr];
     let arrLenght = tempDataArr.length;
     let i;
-    console.log(tempDataArr);
+    orderedArr = [];
     for (i = Math.floor(arrLenght / 2); i >= 0; i--) {
         heapify(tempDataArr, i, arrLenght);
     }
@@ -41,7 +41,6 @@ const heapSort = (dataArr) => {
     for (i = 0; i < tempDataArr.length; i++) {
         orderedArr.push([null, null, null, i]);
     }
-
 	return orderedArr;
 };
 
